@@ -1,0 +1,590 @@
+.app-root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px 96px;
+  gap: 12px;
+}
+
+.app-header {
+  padding: 8px 0 4px;
+}
+
+.app-header h1 {
+  font-size: 22px;
+}
+
+.app-header .subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.app-header.with-back {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-header.vessel-list-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.vessel-list-header-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.app-header.with-back h1 {
+  font-size: 18px;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text);
+  padding: 40px 12px;
+  font-size: 14px;
+}
+
+.empty-state p {
+  margin: 4px 0;
+}
+
+/* Voyage list card */
+.voyage-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.voyage-card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.voyage-name {
+  font-weight: 700;
+  color: var(--text-h);
+  font-size: 16px;
+}
+
+.voyage-dep-time {
+  display: inline-block;
+  background: var(--bg);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 6px;
+  margin-right: 4px;
+}
+
+.voyage-meta {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.voyage-meta strong {
+  color: var(--accent);
+}
+
+/* Stop cards */
+.stop-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stop-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition:
+    opacity 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.stop-card.port-row-dragging {
+  opacity: 0.4;
+}
+
+.stop-card.port-row-drag-over {
+  border-color: var(--accent);
+  border-width: 2px;
+}
+
+.stop-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stop-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stop-card-time {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-h);
+  background: var(--bg);
+  padding: 4px 9px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.stop-card-name-input {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-h);
+  background: var(--card-bg);
+  min-width: 90px;
+}
+
+.stop-card-role {
+  font-size: 11px;
+  color: var(--text);
+}
+
+.stop-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.stop-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stop-card-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stop-card-totals {
+  display: flex;
+  gap: 20px;
+}
+
+.stop-card-total {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.stop-card-total-label {
+  font-size: 12px;
+  color: var(--text);
+}
+
+.stop-card-total-value {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.stop-card-report {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 9px 11px;
+}
+
+.report-phrase {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.report-phrase-line {
+  display: block;
+}
+
+.report-phrase-boarding {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.report-phrase-disembark {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.report-phrase-total {
+  font-weight: 800;
+  color: var(--text-h);
+  margin-top: 2px;
+}
+
+.movement-cell {
+  min-width: 0;
+}
+
+.movement-card-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.destination-plan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.destination-plan-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.destination-plan-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  background: #f8fafc;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.count-card {
+  position: relative;
+  min-height: 72px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.count-card.boarding {
+  background: linear-gradient(180deg, #dcfce7 0%, #f0fdf4 100%);
+}
+
+.count-card.disembark {
+  background: linear-gradient(180deg, #fee2e2 0%, #fff1f2 100%);
+}
+
+.count-card.readonly {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.count-card.editable {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 3px 8px rgba(15, 23, 42, 0.05);
+  border-width: 2px;
+  border-style: solid;
+}
+
+.count-card.editable.boarding {
+  border-color: #c8eed4;
+}
+
+.count-card.editable.disembark {
+  border-color: #f6caca;
+}
+
+.count-card-badge-icon {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  color: inherit;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.count-card.boarding .count-card-badge-icon {
+  color: var(--success);
+}
+
+.count-card.disembark .count-card-badge-icon {
+  color: var(--danger);
+}
+
+.count-card-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 10px);
+  padding: 0 3px;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+  word-break: keep-all;
+  pointer-events: none;
+  transition: opacity 0.16s ease;
+}
+
+.count-card.editable.has-value .count-card-placeholder {
+  opacity: 0;
+}
+
+.count-card-input {
+  width: 100%;
+  min-height: 72px;
+  border: none;
+  padding: 0 10px;
+  background: transparent;
+  color: inherit;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  cursor: text;
+  position: relative;
+  z-index: 1;
+}
+
+.count-card-input::placeholder {
+  color: transparent;
+  opacity: 1;
+}
+
+.count-card-input:focus {
+  outline: 2px solid #22c55e;
+  outline-offset: -2px;
+}
+
+.count-card-readout {
+  min-height: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 8px;
+}
+
+.count-card-readout-label {
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.count-card-readout-value {
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.count-card.boarding .count-card-readout-label,
+.count-card.boarding .count-card-readout-value {
+  color: var(--success);
+}
+
+.count-card.disembark .count-card-readout-label,
+.count-card.disembark .count-card-readout-value {
+  color: var(--danger);
+}
+
+.drag-handle {
+  cursor: grab;
+  touch-action: none;
+  font-size: 13px;
+  padding: 3px 8px;
+  user-select: none;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.btn.secondary {
+  background: var(--bg);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+}
+
+.btn.fab {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  width: calc(100% - 32px);
+  max-width: 448px;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+.icon-btn {
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.icon-btn.danger {
+  color: var(--danger);
+  border-color: var(--danger-bg);
+}
+
+.app-header.with-back .icon-btn {
+  flex-shrink: 0;
+}
+
+/* Form */
+.form-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  flex: 1;
+}
+
+.field input,
+.field select {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: var(--text-h);
+  background: var(--card-bg);
+}
+
+.field input:focus,
+.field select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.field-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.form-actions .btn {
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .screen {
+    padding: 12px 12px 88px;
+  }
+
+  .app-header.with-back {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .app-header.with-back h1 {
+    font-size: 16px;
+    line-height: 1.3;
+    white-space: normal;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .field-row {
+    flex-direction: column;
+  }
+
+  .count-card,
+  .count-card-input,
+  .count-card-readout {
+    min-height: 68px;
+  }
+
+  .count-card-input {
+    font-size: 28px;
+  }
+
+  .btn.fab {
+    width: calc(100% - 24px);
+    bottom: 12px;
+  }
+}

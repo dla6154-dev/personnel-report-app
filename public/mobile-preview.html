@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인원보고 모바일 미리보기</title>
+    <style>
+      :root {
+        --bg-1: #e2ebff;
+        --bg-2: #f8fbff;
+        --shell: #111827;
+        --shell-edge: #334155;
+        --card: rgba(255, 255, 255, 0.74);
+        --text: #0f172a;
+        --muted: #64748b;
+        --shadow: 0 28px 80px rgba(15, 23, 42, 0.2);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", "Malgun Gothic", system-ui, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top, #d8e7ff 0%, var(--bg-1) 28%, var(--bg-2) 100%);
+      }
+
+      .page {
+        min-height: 100vh;
+        padding: 28px 18px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .intro {
+        width: min(100%, 480px);
+        padding: 18px 20px;
+        border-radius: 24px;
+        background: var(--card);
+        box-shadow: 0 18px 48px rgba(15, 23, 42, 0.1);
+        backdrop-filter: blur(20px);
+      }
+
+      .intro h1 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.3;
+      }
+
+      .intro p {
+        margin: 10px 0 0;
+        font-size: 13px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .phone-frame {
+        position: relative;
+        width: min(100%, 420px);
+        padding: 14px;
+        border-radius: 42px;
+        background: linear-gradient(180deg, #1e293b 0%, #020617 100%);
+        box-shadow: var(--shadow);
+      }
+
+      .phone-frame::before,
+      .phone-frame::after {
+        content: "";
+        position: absolute;
+        top: 140px;
+        width: 4px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.26);
+      }
+
+      .phone-frame::before {
+        left: -2px;
+        height: 74px;
+      }
+
+      .phone-frame::after {
+        right: -2px;
+        height: 104px;
+      }
+
+      .phone-shell {
+        position: relative;
+        aspect-ratio: 390 / 844;
+        border-radius: 30px;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid rgba(148, 163, 184, 0.3);
+      }
+
+      .dynamic-island {
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 126px;
+        height: 30px;
+        border-radius: 999px;
+        background: rgba(2, 6, 23, 0.96);
+        z-index: 3;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+      }
+
+      .phone-screen {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: #fff;
+      }
+
+      .caption {
+        width: min(100%, 480px);
+        padding: 14px 16px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.84);
+        box-shadow: 0 16px 44px rgba(15, 23, 42, 0.08);
+        font-size: 12px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .caption strong {
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="intro">
+        <h1>인원보고 모바일 미리보기</h1>
+        <p>실제 앱을 휴대폰 프레임 안에 그대로 띄운 화면입니다. 표의 스크롤, 카드 높이, 버튼 위치를 폰 폭 기준으로 확인할 수 있습니다.</p>
+      </section>
+
+      <section class="phone-frame" aria-label="휴대폰 미리보기 프레임">
+        <div class="phone-shell">
+          <div class="dynamic-island" aria-hidden="true"></div>
+          <iframe class="phone-screen" src="/" title="인원보고 모바일 미리보기"></iframe>
+        </div>
+      </section>
+
+      <div class="caption">
+        <strong>안내:</strong> 프레임 안의 화면은 실제 앱과 같은 데이터를 사용합니다.
+        필요한 항차를 눌러 들어가면 휴대폰에서 보이는 형태 그대로 확인할 수 있습니다.
+      </div>
+    </main>
+  </body>
+</html>
