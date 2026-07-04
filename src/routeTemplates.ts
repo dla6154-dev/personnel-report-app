@@ -95,6 +95,15 @@ const RAW_SCHEDULE: Record<string, { depTime: string; label: string; stops: Rout
   ],
   새섬관매: [
     {
+      depTime: "09:20",
+      label: "관매 → 창유 → 진도",
+      stops: [
+        { name: "관매", time: "09:20" },
+        { name: "창유", time: "10:05" },
+        { name: "진도", time: "10:35" },
+      ],
+    },
+    {
       depTime: "11:10",
       label: "진도 → 관매",
       stops: [

@@ -3,7 +3,7 @@ import { ROUTE_TEMPLATES, ROUTE_TEMPLATE_VESSELS } from "./routeTemplates";
 import type { PortStop, Voyage } from "./types";
 
 const STORAGE_KEY = "personnel-report-app-v1";
-const SEED_FLAG_KEY = "personnel-report-app-route-seed-v7";
+const SEED_FLAG_KEY = "personnel-report-app-route-seed-v8";
 
 export interface StoreShape {
   voyages: Voyage[];
